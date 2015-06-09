@@ -80,7 +80,7 @@ In case you need to work in a regular shell on one of the cluster members, there
 Having a running cluster you can - with the help of consul - find out where your services are using dns queries.
 You can find the service names in the consul UI.
 
-![Consul UI](https://github.com/accumulo/docker-accumulo/accumulo_cluster_in_consul.png)
+![Consul UI](https://raw.githubusercontent.com/accumulo/docker-accumulo/master/accumulo_cluster_in_consul.png)
 
 Example 1: Where is zookeeper again?
 
