@@ -41,6 +41,9 @@ clean:
 	$(DOCKER_CMD) rm -f $(container_name)-master || :
 	$(DOCKER_CMD) rm -f $(container_name) || :
 
+erase: clean
+	$(DOCKER_CMD) rmi $(tag) 
+
 # enter the consul container
 exec-consul:
 	$(DOCKER_CMD) exec -i -t consul-leader /bin/bash

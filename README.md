@@ -1,6 +1,8 @@
 # docker-accumulo
 
 This is a WIP project to make accumulo clusters easily available on the docker platform.
+It is geared towards development and experimentation and currently lacks attributes of production-readiness
+as true persistence or access control. DO NOT USE IN PRODUCTION!
 The workflow is currently arranged around a Makefile that hides some of the operational complexity.
 
 ## Build
@@ -34,6 +36,14 @@ Example:
       Resourcemanager at http://172.17.0.13:8088
       Zookeeper is at 172.17.0.14:2181
 
+If you no longer need your cluster (or want to start over), run
+
+    make clean
+
+This will remove all containers (and all data in them) permanently. If you also want to remove the docker image, use
+
+    make erase
+
 ## Use
 
 Optionally on your running cluster you can add a simple test user
@@ -55,6 +65,15 @@ And after that use
 or
 
     make accumulo-rootshell
+
+In case you need to work in a regular shell on one of the cluster members, there are `docker exec` shortcuts in the Makefile:
+
+    make exec-consul
+    make exec-master
+    make exec-nn
+    make exec-zk0
+    make exec-tserver0
+    make exec-tserver1
 
 ## Misc
 
